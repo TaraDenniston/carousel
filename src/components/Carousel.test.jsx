@@ -1,6 +1,6 @@
 import { render, fireEvent } from "@testing-library/react";
 import Carousel from "./Carousel";
-import { it } from "vitest";
+import { describe, it, expect } from "vitest";
 
 describe('Carousel', () => {
   it("renders without crashing", function() {
