@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import '../styles/App.css'
+import Carousel from "./Carousel";
+import '../styles/App.css';
 
 function App() {
 
   return (
-    <>
-      <h1>Carousel</h1>
-    </>
+    <div className="App">
+      <Carousel />
+    </div>
   )
 }
 
