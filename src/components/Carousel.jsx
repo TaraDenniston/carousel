@@ -25,6 +25,8 @@ function Carousel({ cardData = DEFAULT_CARDS, title = DEFAULT_TITLE }) {
   const [cardIdx, setCardIdx] = useState(0);
   const card = cardData[cardIdx];
   const total = cardData.length;
+  const leftIconHidden = cardIdx === 0 ? "hidden" : "";
+  const rightIconHidden = cardIdx === total - 1 ? "hidden" : "";
   const goForward = () => setCardIdx(cardIdx + 1);
   const goBackward = () => setCardIdx(cardIdx - 1);
 
@@ -33,7 +35,7 @@ function Carousel({ cardData = DEFAULT_CARDS, title = DEFAULT_TITLE }) {
       <h1>{title}</h1>
       <div className="Carousel-main">
         <i
-          className="fas fa-chevron-circle-left fa-2x"
+          className={`fas fa-chevron-circle-left fa-2x ${leftIconHidden}`}
           onClick={goBackward}
           data-testid="left-arrow"
         />
@@ -44,7 +46,7 @@ function Carousel({ cardData = DEFAULT_CARDS, title = DEFAULT_TITLE }) {
           totalNum={total}
         />
         <i
-          className="fas fa-chevron-circle-right fa-2x"
+          className={`fas fa-chevron-circle-right fa-2x ${rightIconHidden}`}
           onClick={goForward}
           data-testid="right-arrow"
         />
