@@ -7,6 +7,11 @@ describe('Carousel', () => {
     render(<Carousel />);
   });
 
+  it("matches snapshot", function() {
+    const { asFragment } = render(<Carousel />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it("works when you click on the right arrow", function() {
     const { queryByTestId, queryByAltText } = render(<Carousel />);
 

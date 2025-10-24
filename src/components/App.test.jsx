@@ -6,4 +6,9 @@ describe('App', () => {
   it('renders without crashing', () => {
     render(<App />);
   });
+
+  it("matches snapshot", function() {
+    const { asFragment } = render(<App />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
